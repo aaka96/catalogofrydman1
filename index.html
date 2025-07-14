@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Channa Verano 25/26</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .product-card {
+            animation: fadeIn 0.5s ease-out;
+            page-break-inside: avoid;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .main-image {
+            transition: opacity 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .thumbnail-active {
+            border-color: #3b82f6; /* blue-500 */
+        }
+        #imageModal {
+            transition: opacity 0.3s ease;
+        }
+        .modal-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        .modal-nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+            .container {
+                padding: 0;
+                margin: 0;
+            }
+            .product-card {
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900">CATALOGO CHANNA VERANO 25/26</h1>
+            <p class="mt-2 text-lg text-gray-600">PARA DAMIAN FRYDMAN</p>
+        </header>
+        
+        <!-- Catálogo de Productos -->
+        <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Producto 1: CAMISOLA CUELLO MAO POLINA -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" data-product-id="camisola-polina">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/X7qvd1gp/channa0784.jpg" alt="Camisola Polina color negro" class="w-full h-96 object-cover main-image">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">CAMISOLA CUELLO MAO POLINA</h3>
+                    <p class="text-gray-600 my-2">Colores: Negro, Blanco, Beige, Camel, Rosa, Celeste, Rojo.</p>
+                    <p class="text-red-600 font-semibold my-2">PRÓXIMAMENTE EN STOCK</p>
+                    <div class="flex flex-wrap gap-2 justify-center my-4 thumbnail-gallery">
+                        <img src="https://i.postimg.cc/X7qvd1gp/channa0784.jpg" alt="Color Negro" title="Negro" class="h-14 w-14 object-cover rounded-md border-2 cursor-pointer thumbnail thumbnail-active">
+                        <img src="https://i.postimg.cc/wBLM3tQ2/channa0768.jpg" alt="Color Blanco" title="Blanco" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/kGnB0n8c/img-8155-copia-b96f0e8b8aad0bd43217326253589177-640-0.webp" alt="Color Beige" title="Beige" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/GthmMXwg/channa0759.jpg" alt="Color Camel" title="Camel" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/bJ0ZVGGr/img-7956-c02b625ca0b814f74d17326253589534-640-0.webp" alt="Color Rosa" title="Rosa" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/V6w6tY78/channa0757.jpg" alt="Color Celeste" title="Celeste" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/bJRvHKM2/channa0747.jpg" alt="Color Rojo" title="Rojo" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                    </div>
+                    <p class="text-3xl font-extrabold text-blue-600 mt-auto">$12.900 + IVA</p>
+                </div>
+            </div>
+
+            <!-- Producto 2: CAMISA MANGA CORTA CON BOLSILLO POLINA -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" data-product-id="camisa-bolsillo">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/Z5cj2Lgt/5-11-cha7593.jpg" alt="Camisa con bolsillo color negro" class="w-full h-96 object-cover main-image">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">CAMISA MANGA CORTA CON BOLSILLO POLINA</h3>
+                    <p class="text-gray-600 my-2">Colores: Negro, Blanco, Beige, Rojo, Celeste.</p>
+                    <p class="text-red-600 font-semibold my-2">PRÓXIMAMENTE EN STOCK</p>
+                    <div class="flex flex-wrap gap-2 justify-center my-4 thumbnail-gallery">
+                        <img src="https://i.postimg.cc/Z5cj2Lgt/5-11-cha7593.jpg" alt="Color Negro" title="Negro" class="h-14 w-14 object-cover rounded-md border-2 cursor-pointer thumbnail thumbnail-active">
+                        <img src="https://i.postimg.cc/gcXSj8w8/channa1771-e4e1b711f3cbaef0be17307311814241-640-0.webp" alt="Color Blanco" title="Blanco" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/QtPfSxzF/channa3215-94f48ad06d4c231b8017307311816558-640-0.webp" alt="Color Beige" title="Beige" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://i.postimg.cc/NFHpnvhp/img-8061-001abea7913187146817327268842782-640-0-1.webp" alt="Color Rojo" title="Rojo" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                        <img src="https://placehold.co/100x100/a0deff/ffffff?text=Celeste" alt="Color Celeste" title="Celeste" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                    </div>
+                    <p class="text-3xl font-extrabold text-blue-600 mt-auto">$13.900 + IVA</p>
+                </div>
+            </div>
+
+            <!-- Producto 3: PANTALON DE JEAN CON ELASTICO -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" data-product-id="pantalon-jean">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/3RyhfNtp/MHS09465.jpg" alt="Pantalon de Jean con elastico" class="w-full h-96 object-cover main-image">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">PANTALON DE JEAN CON ELASTICO</h3>
+                    <p class="text-green-600 font-semibold my-2">EN STOCK</p>
+                    <p class="text-3xl font-extrabold text-blue-600 mt-auto">$19.000 + IVA</p>
+                </div>
+            </div>
+
+            <!-- Producto 4: PALAZZO JEAN -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" data-product-id="palazzo-jean">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/136N2RYk/IMG-7377.jpg" alt="Palazzo Jean" class="w-full h-96 object-cover main-image">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">PALAZZO JEAN</h3>
+                    <p class="text-gray-600 my-2">Colores: Celeste, Azul Oscuro, Intermedio.</p>
+                    <p class="text-purple-600 font-semibold my-2">FABRICACIÓN PROGRAMADA</p>
+                    <p class="text-3xl font-extrabold text-blue-600 mt-auto">$21.000 + IVA</p>
+                </div>
+            </div>
+
+            <!-- Producto 5: CAMISOLA MAO CON ENCAJE -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" data-product-id="camisola-encaje">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/BbVMYZw8/IMG-7660.jpg" alt="Camisola con encaje vista frontal" class="w-full h-96 object-cover main-image">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">CAMISOLA MAO CON MANGA COMBINADA CON ENCAJE</h3>
+                    <p class="text-purple-600 font-semibold my-2">FABRICACIÓN PROGRAMADA</p>
+                    <div class="flex flex-wrap gap-2 justify-center my-4 thumbnail-gallery">
+                        <img src="https://i.postimg.cc/BbVMYZw8/IMG-7660.jpg" alt="Vista Frontal" title="Vista Frontal" class="h-14 w-14 object-cover rounded-md border-2 cursor-pointer thumbnail thumbnail-active">
+                        <img src="https://i.postimg.cc/wMvwQRF8/IMG-7666-2.jpg" alt="Vista Trasera" title="Vista Trasera" class="h-14 w-14 object-cover rounded-md border-2 border-transparent hover:border-blue-500 cursor-pointer thumbnail">
+                    </div>
+                    <p class="text-3xl font-extrabold text-blue-600 mt-auto">$15.700 + IVA</p>
+                </div>
+            </div>
+
+            <!-- Producto 6: VESTIDO DE JEAN CUELLO MAO -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col" data-product-id="vestido-jean">
+                <div class="relative">
+                    <img src="https://i.postimg.cc/0QVLn6r3/img-79141-71675d9f1351fc526d16947011629020-640-0.webp" alt="Vestido de jean cuello mao" class="w-full h-96 object-cover main-image">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-2xl font-bold text-gray-900">VESTIDO DE JEAN CUELLO MAO MANGA CORTA</h3>
+                    <p class="text-orange-600 font-semibold my-2">FABRICACIÓN EN PROCESO</p>
+                    <p class="text-3xl font-extrabold text-blue-600 mt-auto">$24.000 + IVA</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal para agrandar imagen -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center p-4 z-50 no-print">
+        <span class="absolute top-4 right-6 text-white text-5xl font-light cursor-pointer" id="closeModal">&times;</span>
+        <button id="prevImage" class="modal-nav-btn left-4">&#10094;</button>
+        <img id="modalImage" src="" alt="Imagen agrandada" class="max-w-[90vw] max-h-[90vh] object-contain">
+        <button id="nextImage" class="modal-nav-btn right-4">&#10095;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModalBtn = document.getElementById('closeModal');
+            const prevBtn = document.getElementById('prevImage');
+            const nextBtn = document.getElementById('nextImage');
+            
+            let currentGallery = [];
+            let currentIndex = 0;
+
+            // --- Lógica para la galería de miniaturas y abrir el modal ---
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const mainImage = card.querySelector('.main-image');
+                const thumbnails = card.querySelectorAll('.thumbnail');
+
+                // Lógica para cambiar imagen con miniaturas
+                if (thumbnails.length > 0) {
+                    thumbnails.forEach(thumb => {
+                        thumb.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            mainImage.style.opacity = '0';
+                            setTimeout(() => {
+                                mainImage.src = thumb.src;
+                                mainImage.alt = thumb.alt;
+                                mainImage.style.opacity = '1';
+                            }, 300);
+                            thumbnails.forEach(t => t.classList.remove('thumbnail-active', 'border-blue-500'));
+                            thumb.classList.add('thumbnail-active', 'border-blue-500');
+                        });
+                    });
+                }
+
+                // Lógica para abrir el modal
+                mainImage.addEventListener('click', () => {
+                    const galleryContainer = card.querySelector('.thumbnail-gallery');
+                    if (galleryContainer) {
+                        currentGallery = Array.from(galleryContainer.querySelectorAll('.thumbnail')).map(img => img.src);
+                    } else {
+                        currentGallery = [mainImage.src];
+                    }
+                    
+                    currentIndex = currentGallery.indexOf(mainImage.src);
+                    if (currentIndex === -1) currentIndex = 0; // Fallback
+
+                    updateModalImage();
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                });
+            });
+
+            // --- Lógica de navegación del modal ---
+            function updateModalImage() {
+                if (currentGallery.length > 0) {
+                    modalImage.src = currentGallery[currentIndex];
+                }
+                // Ocultar/mostrar flechas si hay una o más imágenes
+                prevBtn.style.display = currentGallery.length > 1 ? 'flex' : 'none';
+                nextBtn.style.display = currentGallery.length > 1 ? 'flex' : 'none';
+            }
+
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                updateModalImage();
+            }
+
+            function showPrevImage() {
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                updateModalImage();
+            }
+
+            nextBtn.addEventListener('click', showNextImage);
+            prevBtn.addEventListener('click', showPrevImage);
+
+            // --- Lógica para cerrar el modal ---
+            function hideModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                currentGallery = [];
+                currentIndex = 0;
+            }
+
+            closeModalBtn.addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
